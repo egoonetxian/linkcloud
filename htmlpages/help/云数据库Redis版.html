@@ -1,0 +1,29 @@
+<!DOCTYPE html><html><head><title>AliCloudDB for Redis兼容哪些Redis命令和操作？</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        <div id="wmd-preview" class="preview-content"></div>
+                    <div id="wmd-preview-section-1" class="wmd-preview-section preview-content">
+
+</div><div id="wmd-preview-section-225" class="wmd-preview-section preview-content">
+
+<h1 id="aliclouddb-for-redis兼容哪些redis命令和操作">AliCloudDB for Redis兼容哪些Redis命令和操作？</h1>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AliCloudDB for Redis兼容支持绝大部分开源Redis的命令和操作，仅禁用了个别命令。此外若您使用的是AliCloudDB for Redis集群实例，也会有部分Redis暂不支持。具体请参考“云数据库Redis版 &gt; 快速入门 &gt; 操作命令”</p></div><div id="wmd-preview-section-285" class="wmd-preview-section preview-content">
+
+<h1 id="用客户端连接aliclouddb-for-redis的时候显示密码不对">用客户端连接AliCloudDB for Redis的时候显示密码不对</h1>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先请确认您的AliCloudDB for Redis实例密码是否输入正确，如有必要可以通过控制台来重置/修改密码。  <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果您确认密码正确但用客户端连接AliCloudDB for Redis时显示密码不对，请检查您是否按照要求的格式输入了鉴权信息。AliCloudDB for Redis的鉴权信息包括了（instanceId:password）两部分，请检查您在程序中是否输入了完整信息。  <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以Java代码为例，正确的代码应该是：</p></div><div id="wmd-preview-section-290" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint hljs-dark"><code class="hljs vhdl"><span class="hljs-comment line-number">1.</span>Jedis jedis = <span class="hljs-keyword">new</span> Jedis(host, <span class="hljs-keyword">port</span>);//鉴权信息由用户名:密码拼接而成jedis.auth(<span class="hljs-string">"instance_id:password"</span>);<br></code></pre>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果您在代码中只输入了password，如下</p>
+
+</div><div id="wmd-preview-section-321" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint hljs-dark"><code class="hljs elixir"><span class="hljs-comment line-number">1.</span><span class="hljs-constant">Jedis </span>jedis = new <span class="hljs-constant">Jedis(</span>host, port);<span class="hljs-regexp">//</span>鉴权信息缺少了instance_idjedis.auth(<span class="hljs-string">"password"</span>);<span class="hljs-regexp">//</span>错误<br></code></pre>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;则在连接AliCloudDB for Redis时会得到如下的出错信息：</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs stylus"><span class="hljs-comment line-number">1.</span>redis<span class="hljs-class">.clients</span><span class="hljs-class">.jedis</span><span class="hljs-class">.exceptions</span><span class="hljs-class">.JedisDataException</span>: ERR Authentication failed.<br></code></pre>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果问题还未能解决，请联系售后技术支持。</p></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div></body></html>
