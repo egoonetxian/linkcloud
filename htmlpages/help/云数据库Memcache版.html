@@ -1,0 +1,20 @@
+<!DOCTYPE html><html><head><title>云数据库Memcache版与自建memcached的差别</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        <div id="wmd-preview" class="preview-content"></div>
+                    <div id="wmd-preview-section-54" class="wmd-preview-section preview-content">
+
+</div><div id="wmd-preview-section-148" class="wmd-preview-section preview-content">
+
+<h1 id="云数据库memcache版与自建memcached的差别">云数据库Memcache版与自建memcached的差别</h1>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;云数据库Memcache版内部使用Tair，并以memcached接口提供服务，各命令的语义和错误返回值保持兼容，基本可以做到无缝切换。但也有一些差别：</p>
+
+<ol><li rel="1">Increment和Decrement的操作数在memcached中是64位无符号整数，在云数据库Memcache版中是32位无符号整数；另外，对字符串数据的操作结果也有不同；</li>
+<li rel="2">CAS值在memcached中是32位无符号整数，在云数据库Memcache版中是16位无符号整数。这对开发人员而言，没有任何影响；</li>
+</ol>
+
+</div><div id="wmd-preview-section-164" class="wmd-preview-section preview-content">
+
+<h1 id="云数据库memcache版适合存储多大的数据">云数据库Memcache版适合存储多大的数据？</h1>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;云数据库Memcache支持的Key的最大上限为250字节（Byte），支持的Value的最大上限为1,000,000字节（Byte）。 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但太大的对象，会占用较大带宽，导致较小的QPS，所以通常情况下建议Value的大小在10K以下为宜。</p></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div></body></html>
