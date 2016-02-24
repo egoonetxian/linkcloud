@@ -4,13 +4,13 @@
 
 </div><div id="wmd-preview-section-51" class="wmd-preview-section preview-content">
 
-<h1 id="ads和odpsrds的区别">ADS和ODPS/RDS的区别</h1>
+<h3 id="ads和odpsrds的区别">ADS和ODPS/RDS的区别</h3>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ODPS适用于有极大的数据量（PB级，万亿条）或复杂的算法模型计算在不要求实时性的前提下进行离线计算，通常不直接对接业务系统。 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RDS是OLTP数据库，主要用于承接业务中的事务处理（增删改查等），处理的数据量通常不高。 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADS是在接近RDS的处理速度（毫秒级）下能够处理较海量（100亿条，最大数十TB级别）的数据的，也可以直接对接分析型的业务系统。但是不支持事务。</p></div><div id="wmd-preview-section-30" class="wmd-preview-section preview-content">
 
-<h1 id="之前有云上的业务系统如何使用ads">之前有云上的业务系统，如何使用ADS？</h1>
+<h3 id="之前有云上的业务系统如何使用ads">之前有云上的业务系统，如何使用ADS？</h3>
 
 <p>云上的前端业务系统（如在ECS上的网站）通过标准MySQL客户端即可连接到ADS进行数据查询计算。 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于数据导入ADS，目前可以利用云上的ODPS，将数据导入到ODPS（也可以在ODPS上进行清洗等处理）后，可以很方面的通过ADS自身的data pipeline功能导入ADS。 <br>
