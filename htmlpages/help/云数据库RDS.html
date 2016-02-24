@@ -1,21 +1,28 @@
 <!DOCTYPE html><html><head><title>RDS数据库可以升级么？</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
                         <div id="wmd-preview" class="preview-content"></div>
-                    <div id="wmd-preview-section-1" class="wmd-preview-section preview-content">
+                    <div id="wmd-preview-section-324" class="wmd-preview-section preview-content">
 
-</div><div id="wmd-preview-section-61" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-341" class="wmd-preview-section preview-content">
 
 <h1 id="rds数据库可以升级么">RDS数据库可以升级么？</h1>
 
-<pre class="prettyprint hljs-dark"><code class="hljs vbscript"><span class="hljs-comment line-number">1.</span>   如果是指数据库版本，RDS目前支持固定版本。RDS <span class="hljs-keyword">for</span> MySQL会融入大量用户需要的补丁，包括功能性的，安全性，稳定性等方面，另外RDS <span class="hljs-keyword">for</span> SQL <span class="hljs-built_in">Server</span>会定期进行数据库补丁升级，包括安全补丁，功能补丁，稳定补丁等，但数据库版本支持固定版本。<br><span class="hljs-comment line-number">2.</span>   如果是规格升级，RDS支持多种规格，用户可以根据自身需要升级到相应的产品规格。<br></code></pre>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果是指数据库版本，RDS目前支持固定版本。RDS for MySQL会融入大量用户需要的补丁，包括功能性的，安全性，稳定性等方面，另外RDS for SQL Server会定期进行数据库补丁升级，包括安全补丁，功能补丁，稳定补丁等，但数据库版本支持固定版本。 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果是规格升级，RDS支持多种规格，用户可以根据自身需要升级到相应的产品规格。</p>
 
-</div><div id="wmd-preview-section-101" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-369" class="wmd-preview-section preview-content">
 
-<h1 id="应用程序是否需要支持自动重连数据库">应用程序是否需要支持自动重连数据库</h1>
+<h1 id="应用程序是否需要支持自动重连数据库">应用程序是否需要支持自动重连数据库？</h1>
 
-<pre class="prettyprint hljs-dark"><code class="hljs"><span class="hljs-comment line-number">1.</span>   建议您的应用程序连接数据库的方式支持自动重连。这样可以提供更高的可用性。当数据库发生切换或迁移后，不需要您人工介入应用会自动恢复。 同时建议您的应用程序采用长连接来连接数据库，短连接非常消耗性能和资源。<br></code></pre>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;建议您的应用程序连接数据库的方式支持自动重连。这样可以提供更高的可用性。当数据库发生切换或迁移后，不需要您人工介入应用会自动恢复。同时建议您的应用程序采用长连接来连接数据库，短连接非常消耗性能和资源</p>
 
-</div><div id="wmd-preview-section-170" class="wmd-preview-section preview-content">
+</div><div id="wmd-preview-section-406" class="wmd-preview-section preview-content">
 
 <h1 id="云服务器如何通过内网访问rds">云服务器如何通过内网访问RDS？</h1>
 
-<pre class="prettyprint hljs-dark"><code class="hljs cpp"><span class="hljs-comment line-number">1.</span>    云服务器公网带宽一般都是有限的。如果通过云服务器的公网网卡访问RDS，则往往会受带宽限制，导致整个系统性能很慢。 因此我们建议您通过云服务器的内网网卡访问RDS，从RDS控制台切换内网的方法如下：<br><span class="hljs-comment line-number">2.</span>    <span class="hljs-number">1</span>）在高安全访问模式下，支持内外网同时存在，您只需在RDS控制台点击“申请内网地址”即可；<br><span class="hljs-comment line-number">3.</span>    <span class="hljs-number">2</span>）在高性能访问模式下，只支持一种连接地址，您只需在RDS控制台点击“申请内网地址”，即可切换到内网地址，同时释放外网连接地址； <br><span class="hljs-comment line-number">4.</span>    请注意增加内网连接后，如您的连接地址有变更，您的应用程序需要修改数据库的连接地址，并且需要重启应用程序。否则您的应用程序将无法访问RDS。<br></code></pre></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div></body></html>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;云服务器公网带宽一般都是有限的。如果通过云服务器的公网网卡访问RDS，则往往会受带宽限制，导致整个系统性能很慢。 因此我们建议您通过云服务器的内网网卡访问RDS，从RDS控制台切换内网的方法如下：</p>
+
+</div><div id="wmd-preview-section-412" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint hljs-dark"><code class="hljs cpp"><span class="hljs-comment line-number">1.</span><span class="hljs-number">1</span>）在高安全访问模式下，支持内外网同时存在，您只需在RDS控制台点击“申请内网地址”即可；<br><span class="hljs-comment line-number">2.</span><span class="hljs-number">2</span>）在高性能访问模式下，只支持一种连接地址，您只需在RDS控制台点击“申请内网地址”，即可切换到内网地址，同时释放外网连接地址；<br></code></pre>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请注意增加内网连接后，如您的连接地址有变更，您的应用程序需要修改数据库的连接地址，并且需要重启应用程序。否则您的应用程序将无法访问RDS。</p></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div></body></html>
