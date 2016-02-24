@@ -1,0 +1,30 @@
+<!DOCTYPE html><html><head><title>DTS迁移过程中，是否会锁表，对源数据库是否有影响？</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        <div id="wmd-preview" class="preview-content"></div>
+                    <div id="wmd-preview-section-527" class="wmd-preview-section preview-content">
+
+</div><div id="wmd-preview-section-536" class="wmd-preview-section preview-content">
+
+<h1 id="dts迁移过程中是否会锁表对源数据库是否有影响">DTS迁移过程中，是否会锁表，对源数据库是否有影响？</h1>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果配置迁移任务时，选择了全量数据迁移和增量数据迁移，那么在全量数据迁移过程中，DTS会判断源数据库中是否存在非事务且无主键的表，如果存在，那么为了保证迁移数据一致性，DTS会给这些表上只读锁，然后将这些表的数据全量迁移到目标库之后，释放掉只读锁，进行其他表的全量迁移。 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在上只读锁期间，只有被上锁的表只能进行只读操作，其他表可以正常读写。</p></div><div id="wmd-preview-section-557" class="wmd-preview-section preview-content">
+
+<h1 id="dts迁移时对于ecsrds实例是走内网还是公网">DTS迁移时，对于ECS、RDS实例是走内网还是公网？</h1>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果是进行同一个地区内部的数据迁移，那么DTS会使用内网连接ECS、RDS实例 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果是进行跨地区的数据迁移，那么DTS会使用外网连接源实例(ECS、RDS)，使用内网连接目标RDS实例</p>
+
+</div><div id="wmd-preview-section-586" class="wmd-preview-section preview-content">
+
+<h1 id="rds的白名单列表中突然添加了很多不认识的ip这些ip是哪里的是否安全">RDS的白名单列表中突然添加了很多不认识的IP,这些IP是哪里的？是否安全？</h1>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数据传输在数据迁移之前，会判断源或目标RDS实例是否设置了白名单，如果RDS实例限制了白名单，DTS服务器不能访问。那么DTS会在配置迁移任务时，将服务器的IP列表添加到RDS实例的白名单中，防止因为白名单限制，DTS连接不上RDS实例导致迁移失败。 <br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在迁移完成后的一天内， DTS会将自己服务器列表IP从RDS白名单中删除掉。</p>
+
+</div><div id="wmd-preview-section-612" class="wmd-preview-section preview-content">
+
+<h1 id="数据迁移预检查时预检查项schema不存在失败是什么原因如何修复">数据迁移预检查时，预检查项schema不存在失败是什么原因?如何修复？</h1>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目前DTS已经支持自动在目标RDS实例创建数据库。如果在预检查时报schema不存在，那么可能的原因如下： <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您本地的数据名称含有大写字母、特殊字符或是为RDS的关键字。RDS要求数据名由小写字母、数字、下划线、中划线组成，字母开头，字母或数字结尾，最长64个字符。如果您源实例的数据名称不满足这个要求，那么DTS就不会自动在RDS中创建这个库，而会在预检查时，报schema不存在的错误。 特殊字符 <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了解决这个问题，您需要先手动在RDS控制台创建一个合法的数据库，然后在配置DTS迁移任务时，使用库名映射，将本地数据库中的数据迁移到RDS上这个名字合法的数据库中。具体可以参考:最佳实践中的库名不同的数据库之间的数据迁移一节。</p></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div></body></html>
