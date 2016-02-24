@@ -1,0 +1,100 @@
+<!DOCTYPE html><html><head><title>云数据库MongoDB支持及限制的命令？</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        <div id="wmd-preview" class="preview-content"></div>
+                    <div id="wmd-preview-section-54" class="wmd-preview-section preview-content">
+
+</div><div id="wmd-preview-section-351" class="wmd-preview-section preview-content">
+
+<h1 id="云数据库mongodb支持及限制的命令">云数据库MongoDB支持及限制的命令？</h1>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MongoDB官方命令表<a href="http://docs.mongodb.org/master/reference/command/" target="_blank">http://docs.mongodb.org/master/reference/command/</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以下为云数据库MongoDB版支持的命令表：</p>
+
+<table>
+<thead>
+<tr>
+  <th align="left">Aggregates Commands</th>
+  <th align="left">Geospatial Commads</th>
+  <th align="left">Query and Write Operation Commands</th>
+  <th align="left">Query Plan Cache Commands</th>
+  <th align="left">Authentication</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td align="left">该类别的命令全部支持</td>
+  <td align="left">该类别的命令全部支持</td>
+  <td align="left">insert</td>
+  <td align="left">该类别的命令全部支持</td>
+  <td align="left">该类别的命令全部支持</td>
+</tr>
+<tr>
+  <td align="left">aggregate</td>
+  <td align="left">geoNear</td>
+  <td align="left">update</td>
+  <td align="left">planCacheListFilters</td>
+  <td align="left">authenticate</td>
+</tr>
+<tr>
+  <td align="left">…</td>
+  <td align="left">…</td>
+  <td align="left">…</td>
+  <td align="left">…</td>
+  <td align="left">…</td>
+</tr>
+</tbody></table>
+
+
+</div><div id="wmd-preview-section-388" class="wmd-preview-section preview-content">
+
+<h1 id="云数据库mongodb版支持哪些语言的客户端进行连接">云数据库MongoDB版支持哪些语言的客户端进行连接</h1>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;云数据库MongoDB版针对客户端连接完全兼容MongoDB，只要是官方MongoDB版支持的客户端，云数据库全部支持。 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;比如：C,C++,c#,java,node.js,python,php,perl等等，具体详情见官方链接，参见<a href="https://docs.mongodb.org/ecosystem/drivers/" target="_blank">https://docs.mongodb.org/ecosystem/drivers/</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注意：请使用Mongodb-3.0的Driver才能AliCloudDB for MongoDB，否则无法鉴权成功。</p>
+
+</div><div id="wmd-preview-section-505" class="wmd-preview-section preview-content">
+
+<h1 id="云数据库mongodb可购买的配置">云数据库MongoDB可购买的配置？</h1>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;云数据库MongoDB版商业化后，实例配置表如下:</p>
+
+<table>
+<thead>
+<tr>
+  <th align="left">CPU/内存</th>
+  <th align="right">最大IOPS</th>
+  <th align="center">最大连接数</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td align="left">1核2G</td>
+  <td align="right">800</td>
+  <td align="center">100</td>
+</tr>
+<tr>
+  <td align="left">1核2G</td>
+  <td align="right">800</td>
+  <td align="center">100</td>
+</tr>
+<tr>
+  <td align="left">1核2G</td>
+  <td align="right">800</td>
+  <td align="center">100</td>
+</tr>
+<tr>
+  <td align="left">1核2G</td>
+  <td align="right">800</td>
+  <td align="center">100</td>
+</tr>
+<tr>
+  <td align="left">1核2G</td>
+  <td align="right">800</td>
+  <td align="center">100</td>
+</tr>
+</tbody></table>
+
+
+</div><div id="wmd-preview-section-521" class="wmd-preview-section preview-content">
+
+<h1 id="云数据库mongodb是否支持外网访问">云数据库MongoDB是否支持外网访问</h1>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当前不支持外网访问，必须在云数据库MongoDB的相同地域保有ECS，从ECS方可连接至MongoDB</p></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div></body></html>
