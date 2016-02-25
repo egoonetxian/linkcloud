@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head><title>为什么应用操作（如启动应用、停止应用、部署应用等）会出现失败？</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        <div id="wmd-preview" class="preview-content"></div>
+                    <div id="wmd-preview-section-1" class="wmd-preview-section preview-content">
+
+</div><div id="wmd-preview-section-47" class="wmd-preview-section preview-content">
+
+<h3 id="为什么应用操作如启动应用停止应用部署应用等会出现失败">为什么应用操作（如启动应用、停止应用、部署应用等）会出现失败？</h3>
+
+<p>请在出现失败情况的服务器上检查EDAS Agent是否正常运行，通常而言，应用操作失败都是由于Agent没有正常运行导致。</p>
+
+</div><div id="wmd-preview-section-66" class="wmd-preview-section preview-content">
+
+<h3 id="为什么在edas-console上面机器实例的状态是未知">为什么在EDAS Console上面机器实例的状态是“未知”？</h3>
+
+<p>EDAS Agent会定期汇报心跳数据给EDAS Console，如果Agent停止汇报状态，则某段时间后该机器将会被判定为未知状态。通常而言，该问题是由于Agent停止导致。</p>
+
+</div><div id="wmd-preview-section-87" class="wmd-preview-section preview-content">
+
+<h3 id="das-agent为什么无法启动">DAS Agent为什么无法启动？</h3>
+
+<p>首先在服务器上使用ping命令检查edas console服务器是否可达：</p>
+
+</div><div id="wmd-preview-section-93" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint hljs-dark"><code class="hljs stylus"><span class="hljs-comment line-number">1.</span>ping edas-internal<span class="hljs-class">.console</span><span class="hljs-class">.aliyun</span><span class="hljs-class">.com</span><br></code></pre>
+
+<p>其次请检查您的安全令牌文件是否被正确设置：</p>
+
+</div><div id="wmd-preview-section-106" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint hljs-dark"><code class="hljs gradle"><span class="hljs-comment line-number">1.</span>cat <span class="hljs-regexp">/home/</span>admin<span class="hljs-regexp">/.spas_key/</span><span class="hljs-keyword">default</span><br></code></pre>
+
+</div><div id="wmd-preview-section-149" class="wmd-preview-section preview-content">
+
+<h3 id="现在edas是否支持在同一台服务器上安装多个应用">现在EDAS是否支持在同一台服务器上安装多个应用？</h3>
+
+<p>目前EDAS只支持在一台服务器安装单个应用。建议通过调低机器配置的方式创建多个服务器实例，每台服务器只部署一个应用。</p>
+
+</div><div id="wmd-preview-section-174" class="wmd-preview-section preview-content">
+
+<h3 id="在创建应用的时候为什么我名下的服务器没有出现在服务器选择对话框中">在创建应用的时候，为什么我名下的服务器没有出现在服务器选择对话框中？</h3>
+
+<p>请检查在服务器上是否正确安装EDAS Agent，具体的安装办法请参考资源管理-&gt;ECS列表-&gt;安装Agent中的步骤完成Agent安装。请注意，安装Agent时一定要选择正确的区域(Region)。</p></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div></body></html>
